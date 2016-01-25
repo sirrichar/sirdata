@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mytetradoc>
+<root>
+ <format version="1" subversion="1"/>
+ <content>
+  <node crypt="1" id="1453752275gesta5u1nr" name="Z/hXLCbC4Fzmx8paxGe2L9CwxLArpCpmemDzj6h2qS4DyEQWxHOl/A==">
+   <node crypt="1" id="1453752324qoq6vo37f6" name="m8Fsz2P9xeVfEie2mzMMUpfpCe4ViHxguTkNYq0G3ko=">
+    <recordtable>
+     <record dir="1453752536heyyjxuwtk" crypt="1" url="" tags="kUmr10omOg4ze9zLBO9plWNRd4OXMgjPrp5RR8iv71/3PU2IjdMqDsiTd8B68BjPC4Xb5eGUp10=" author="vkY/Pbh6By3/EgK41pFLVizL62LeCgIS/WITO0kDXaRYuITUVSTpnw==" id="1453752536t6b86e0nn0" ctime="20160125230856" name="9YDsX1O25XPcMN6VSknOvyL0moLlXZMPjZgnSKU82lJ+PX37Y78nF5v9wa9gKI3L3ZzIHYsNhU880K7wY3oL6SEDBmF7QMPd" file="text.html"/>
+    </recordtable>
+   </node>
+  </node>
+  <node id="1453752296fraf7xhcb2" name="Обычные"/>
+ </content>
+</root>
