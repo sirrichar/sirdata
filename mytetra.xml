@@ -10,6 +10,19 @@
     </recordtable>
    </node>
   </node>
-  <node id="1453752296fraf7xhcb2" name="Обычные"/>
+  <node id="1453752296fraf7xhcb2" name="Обычные">
+   <node id="1453789378dbddpafnxs" name="Linux">
+    <recordtable>
+     <record dir="1453789483qzcb4av15g" crypt="0" url="" tags="linux, команды" author="Рябинин А.К." id="1453789483rsua429j3g" ctime="20160126092443" name="Некоторые полезные команды" file="text.html"/>
+    </recordtable>
+   </node>
+   <node id="14537893886ul4ykxv5a" name="Рабочие">
+    <node id="1453789502lb3dm7nyot" name="WAGO">
+     <recordtable>
+      <record dir="1453789843o9ibcwz5ru" crypt="0" url="http://www.wago.su/examples/primer2" tags="wago, взлом, faq" author="Maxim Ananskih" id="14537898436g0bnefyp0" ctime="20160126093043" name="Как обмануть WAGO-I/O-CHECK и настроить Modbus Master - WAGO FAQ" file="text.html"/>
+     </recordtable>
+    </node>
+   </node>
+  </node>
  </content>
 </root>

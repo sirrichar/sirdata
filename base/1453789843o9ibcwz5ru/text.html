@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><a name="sites-page-title-header"></a><span style=" font-size:large; font-weight:600;">П</span><span style=" font-size:large; font-weight:600;">ример 2. Как обмануть WAGO-I/O-CHECK и настроить Modbus Master</span><span style=" font-size:large; font-weight:600;"> </span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><a name="afterPageTitleHideDuringEdit"></a>Отправлено </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1 июн. 2011 г., 12:12 пользователем Maxim Ananskih   <a name="sites-announcement-updated-time"></a>[ обновлено 17 авг. 2011 г., 10:18 ] </p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<table border="0" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><a name="sites-canvas-main"></a><span style=" font-family:'OpenSymbol';">•</span><span style=" font-family:'Times New Roman'; font-size:7pt;">         </span><span style=" font-weight:600; font-style:italic;">Для опроса ведомых устройств Modbus используется библиотека Modb_l05.lib и модули последовательных интерфейсов с настраиваемыми параметрами</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'OpenSymbol';">•</span><span style=" font-family:'Times New Roman'; font-size:7pt;">         </span><span style=" font-weight:600; font-style:italic;">Коммуникационные модули нужно предварительно настроить, для чего обязательно требуется утилита WAGO-I/O-CHECK</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'OpenSymbol';">•</span><span style=" font-family:'Times New Roman'; font-size:7pt;">         </span><span style=" font-weight:600; font-style:italic;">Модули с предустановленными параметрами тоже можно конфигурировать, особым образом изменив конфигурационные файлы WAGO-I/O-CHECK</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'OpenSymbol';">•</span><span style=" font-family:'Times New Roman'; font-size:7pt;">         </span><span style=" font-weight:600; font-style:italic;">Прилагается пример программы для проверки работы Modbus</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Контроллер WAGO обычно выступает ведомым (Slave) в сетях Modbus. Однако можно сделать его и ведущим (Master). Для этого используется библиотека <a href="http://www.wago.su/biblioteki-wago/modb_l05-lib"><span style=" text-decoration: underline; color:#0000ff;">Modb_l05.lib</span></a>.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">В этой библиотеке вы найдете функциональный блок MODBUS_MASTER_RTU, с помощью которого можно опрашивать по Modbus ведомые устройства. Блок предназначен для работы с любыми контроллерами, кроме контроллеров со встроенной поддержкой Modbus (750-812, 750-814, 750-815 и 750-816).</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:36px; margin-right:36px; -qt-block-indent:0; text-indent:0px;"><img src="image130228822.png" /></p>
+<p style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-style:italic;">Иллюстрация 1: Пример использования MODBUS_MASTER_RTU</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Этот функциональный блок может использоваться с коммуникационными модулями 750-65x, со встроенным портом RS-232 контроллера 750-873 и с портом для программирования контроллеров. Но как правило, протокол Modbus применяется для обмена по интерфейсу RS-485, для работы с которым используется модуль 750-653 или 753-653.</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Коммуникационные модули WAGO обычно обладают предустановленными настройками скорости, количества стоповых битов, проверки четности и количества битов в байте. Вариант настроек модуля необходимо указывать при заказе. Сделано это для того, чтобы упростить обслуживание систем автоматизации: чтобы заменить вышедший из строя модуль, достаточно заказать модуль с такими же настройками. Настройки соответствуют части заказного номера, которая указывается после косой черты. Так, например, модуль 750-653 доступен в следующих вариантах:</span></p>
+<table border="1" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;" width="100%" cellspacing="0" cellpadding="4">
+<tr>
+<td width="19%" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Заказной номер</p></td>
+<td width="13%" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Интерфейс</p></td>
+<td width="11%" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Скорость</p></td>
+<td width="12%" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Проверка четности</p></td>
+<td width="11%" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Кол-во битов данных</p></td>
+<td width="12%" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Кол-во стоповых битов</p></td>
+<td width="21%" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Количество байтов в образе процесса</p></td></tr>
+<tr>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">750-653</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RS-485</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">9600</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Нет</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">8</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3</p></td></tr>
+<tr>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">750-653/000-001</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RS-485</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">9600</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Четн.</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">7</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3</p></td></tr>
+<tr>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">750-653/000-002</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RS-485</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">9600</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Четн.</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">8</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3</p></td></tr>
+<tr>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">750-653/000-006</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RS-485</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">19200</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Нет</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">8</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5</p></td></tr>
+<tr>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">750-653/000-007</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RS-485</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2400</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Нет</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">8</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1</p></td>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3</p></td></tr>
+<tr>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">750-653/003-000</p></td>
+<td colspan="6" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Конфигурируемый</p></td></tr>
+<tr>
+<td style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">750-653/025-000</p></td>
+<td colspan="6" style=" vertical-align:top;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Конфигурируемый, с расширенным температурным диапазоном (-20..+60<span style=" font-family:'Calibri, sans-serif';">°C)</span></p></td></tr></table>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;"><br /></span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Если попробовать запустить приведенную на рисунке 1 программу с модулем 750-653 с «жестко» заданными настройками на двухпроводной линии RS-485, мы увидим, что блок MODBUS_MASTER_RTU выдает ошибку контрольной суммы. Почему так происходит?</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Дело в том, что при полудуплексном режиме обмена и прием, и передача осуществляется по одной и той же паре проводов, к которой подключается и приемник, и передатчик. Узел RS-485 при передаче сообщения должен отключать приемник, иначе он примет «эхо» - тот же сигнал, что он сам и передал. Поэтому модуль RS-485 имеет специальную настройку для работы с полудуплексной линией связи. Эту настройку можно задать с помощью программы WAGO-I/O-CHECK.</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:36px; margin-right:36px; -qt-block-indent:0; text-indent:0px;"><img src="image1517973304.png" /></p>
+<p style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-style:italic;">Иллюстрация 2: Настройка модуля последовательного интерфейса в WAGO-I/O-CHECK</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Для работы с двухпроводной линией нужно задать параметру Duplex Mode значение Halfduplex (полудуплекс). Однако, как вы догадываетесь, это можно сделать только для настраиваемых модулей. Что же делать, если у нас обычный 750-653 с «жестко» заданными параметрами?</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">На самом деле, возможностью настройки параметров обладают все коммуникационные модули. Ограничения для модулей с «жесткой» конфигурацией сделаны на программном уровне. Так, программа WAGO-I/O-CHECK проверяет тип модуля в контроллере, и, обнаружив модуль с «жесткой» конфигурацией, запрещает вызывать диалог настройки параметров. К счастью, есть способ обмануть эту программу.</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">WAGO-I/O-CHECK хранит информацию о всех возможных модулях в настроечных файлах. Эти файлы находятся в папке %InstallPath%\Config\Terminal, где %InstallPath% - каталог, в который установлена программа. Например, у меня на компьютере это C:\Program Files (x86)\WAGO Software\WAGO-IO-Check 3\Config\Terminal. Рассмотрим содержимое настроечного файла 07500653_00030000.wdd для конфигурируемого модуля 750-653/003-000:</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small;">----------------------------------------------------------<br />File : 07500653_00030000.wdd<br />Module: 0750-0653/0003-0000<br />Date : 2007-08-03<br />----------------------------------------------------------<br />[Common]<br />Article-NO = 0750-0653/0003-0000<br />Article-ID = 50054539<br />DescriptionDE = RS485 Interface (Adjustable)<br />DescriptionEN = RS485 Interface (Adjustable)<br />DescriptionFR = RS485 Interface (Adjustable)<br />ModuleType = 13<br />ModuleIcon = 13<br /></span><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small; background-color:#ffff00;">Adjustable = 1</span><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small;"><br /></span><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small; background-color:#ffffff;">Consumption = 50<br />Voltage = 0<br />LK1 = 0<br />LK2 = 0<br />PE = 0</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small;">[LED]<br />LEDMAX = 4<br />LEDROWS = 2<br />LEDCOLS = 2<br /><br />LED_00 = 1, 0, -1<br />LED_01 = 0, 0, -1<br />LED_02 = 1, 0, -1<br />LED_03 = 1, 0, -1<br /><br /></span><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small; background-color:#ffff00;">[Default]<br />R32 = 0x0006 ; Baudrate<br />R33 = 0x0003 ; Datenrahmen<br />R34 = 0x0002 ; Feature-Register<br />R35 = 0x0003 ; Datenbytes<br /></span><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small;"><br /></span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'verdana, sans-serif'; font-size:small;">Нас интересуют выделенные желтым цветом параметры. Очевидно, что параметр Adjustable как раз и определяет возможность настройки модуля. В секции [Default] указано содержимое регистров модуля по умолчанию. Сравним с конфигурационным файлом для обычного модуля:</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small;">----------------------------------------------------------<br />File : 07500653.wdd<br />Module: 0750-0653<br />Date : 2007-08-03<br />----------------------------------------------------------<br />[Common]<br />Article-NO = 0750-0653<br />Article-ID = 07500653<br />DescriptionDE = RS485 Interface<br />DescriptionEN = RS485 Interface<br />DescriptionFR = RS485 Interface<br />ModuleType = 13 <br />ModuleIcon = 13 <br />Consumption = 50<br />Voltage = 0<br />LK1 = 0<br />LK2 = 0<br />PE = 0<br /><br />[LED]<br />LEDMAX = 4<br />LEDROWS = 2<br />LEDCOLS = 2<br /><br />LED_00 = 1, 0, -1<br />LED_01 = 0, 0, -1<br />LED_02 = 1, 0, -1<br />LED_03 = 1, 0, -1<br /></span><span style=" font-size:small;"><br /></span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'verdana, sans-serif'; font-size:small;">Как видим, таких же строк, как у настраиваемого модуля, и которые мы обозначили желтым цветом, в этом файле нет. Что если скопировать их сюда с помощью текстового редактора (например, Notepad)? Попробуем это сделать и убедимся: теперь окошко конфигурации стало доступным и для этого модуля!</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'verdana, sans-serif'; font-size:small;">Небольшой момент, возникающий при использовании Windows 7: система не позволяет сохранить отредактированный файл в каталог, где он должен храниться. Нужно сначала скопировать его в другое место (например, на рабочий стол), отредактировать, а затем переместить обратно.</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'verdana, sans-serif'; font-size:small;">Как быть, если мы хотим указывать параметры обмена в нашей программе, а не настраивать их предварительно в WAGO-I/O-CHECK? К сожалению, определение типа модуля встроено в программное обеспечение и библиотеки контроллера. Поэтому задать новые параметры так же, как для настраиваемых модулей, не получится. Необходимо использовать WAGO-I/O-CHECK, а соответствующие входы блока просто оставить неприсоединенными, или же задать им значения по умолчанию:</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:&quot;'courier new', monospace&quot;; font-size:small;">VAR<br />MASTER: MODBUS_MASTER_RTU;<br />COM_PORT: BYTE := 2;<br />COM_BAUDRATE: COM_BAUDRATE := BAUDRATE_TERMINAL_DEFAULT;<br />COM_PARITY: COM_PARITY := PARITY_TERMINAL_DEFAULT;<br />COM_STOPBITS: COM_STOPBITS := STOPBITS_TERMINAL_DEFAULT;<br />COM_BYTESIZE: COM_BYTESIZE := BYTESIZE_TERMINAL_DEFAULT;<br />COM_FLOW_CONTROL: COM_FLOW_CONTROL := FLOW_CONTROL_TERMINAL_DEFAULT;<br />...<br /></span><span style=" font-size:small;"><br /></span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Есть и еще одна причина, по которой мы не сможем обойтись без WAGO-I/O-CHECK. Дело в том, что только с её помощью можно изменить значение параметра Continuous Send (см. рисунок 2). Если этот параметр имеет значение «ON», байты для передачи по последовательному интерфейсу берутся из внутреннего буфера модуля, имеющего размер 16 байт. Если же эту настройку отключить, то данные для передачи берутся напрямую из образа процесса, в котором для этого отводится от 3 до 5 байт, в зависимости от настроек модуля (по умолчанию 3 байта). Один байт соответствует 10 битам (стартовый + 8 битов данных + 1 стоповый). Получается, что при скорости обмена 9600 бит/с нам нужно передавать в модуль 960 байт в секунду, а для этого циклы сканирования нашей программы, включая обмен по внутренней шине контроллера, должны выполняться не реже чем 320 раз в секунду. То есть, все вместе должно занимать не более чем 3,125 миллисекунд. К сожалению, так бывает только в самых идеальных случаях. На практике же данные в модуль передаются реже, что приводит к задержкам между передачей отдельных байтов по последовательному интерфейсу. Если такая задержка превысит определенную величину, это будет рассматриваться удаленным устройством Modbus как ошибка. Согласно протоколу обмена Modbus, на ошибочные запросы ведомые устройства не отвечают. В итоге мы получим тайм-аут при приеме ответа от устройства.</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Как вы уже, наверно, догадались, по умолчанию параметр Continuous Send в модулях отключен! А включить его можно только с помощью WAGO-I/O-CHECK. После изменения этой настройки, новое значение будет сохранено в энергонезависимой памяти модуля ввода-вывода.</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Для того, чтобы протестировать работу с протоколом Modbus, я написал очень простой примерчик. Собственно, вся программа уместилась на рисунке 1. Для управления программой используется встроенная визуализация CoDeSys. Чтобы протестировать обмен, нужно загрузить в контроллер прилагаемый файл и открыть окно визуализации.</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:36px; margin-right:36px; -qt-block-indent:0; text-indent:0px;"><img src="image2052719368.png" /></p>
+<p style=" margin-top:0px; margin-bottom:12px; margin-left:36px; margin-right:36px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-style:italic;">Иллюстрация 3: Работа с примером программы</span></p>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">Настроив параметры в верхней части экрана визуализации (номер порта и настройки обмена), запустите программу на выполнение. Затем задайте значения, необходимые для запроса к устройству: адрес устройства (Slave address), код функции (Function), а также адрес регистра для данной функции (Register address) и количество регистров (Quantity), если эти параметры требуются для данной функции. Код функции может быть следующим:</span></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"><li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x01 Read Coil Status</span><span style=" font-size:small;"> — читать значения дискретных выходов или битов в памяти</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x02 Read Input Status</span><span style=" font-size:small;"> — читать значения дискретных входов</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x03 Read Holding Register</span><span style=" font-size:small;"> — читать значения аналоговых выходов или регистров в памяти</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x04 Read Input Registers</span><span style=" font-size:small;"> — читать значения аналоговых входов</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x05 Force Single Coil</span><span style=" font-size:small;"> — установить значение дискретного выхода или бита в памяти</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x06 Preset Single Registers</span><span style=" font-size:small;"> — установить значение аналогового выхода или регистра в памяти</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x0B Fetch Comm Event Ctr</span><span style=" font-size:small;"> — получить значение счетчика событий</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x0F Force Multiple Coils</span><span style=" font-size:small;"> — установить значения нескольких дискретных выходов или битов в памяти</span></li>
+<li style=" font-size:small;" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small; font-weight:600;">0x10 Preset Multiple Registers</span><span style=" font-size:small;"> — установить значение нескольких аналоговых выходов или регистров в памяти</span></li></ul>
+<p style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:small;">В табличке DATA нужно задать данные, если они требуются для данной функции, и затем нажать кнопку SEND. После этого, при получении ответа от ведомого устройства, его поля будут показаны в правой части экрана. Если же произойдет коммуникационная ошибка, она отобразится в нижней части.</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:small;"></p></td></tr></table></body></html>
