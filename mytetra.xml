@@ -11,6 +11,11 @@
    </node>
   </node>
   <node id="1453752296fraf7xhcb2" name="Обычные">
+   <node id="1453794713sfdxyhwlh8" name="VirtualBox">
+    <recordtable>
+     <record dir="1453794870tmruysj0ln" crypt="0" url="" tags="VB, Virtualbox" author=" Рябинин Алексей" id="1453794870usp6v9fmmk" ctime="20160126105430" name="Полезности при работе с VB" file="text.html"/>
+    </recordtable>
+   </node>
    <node id="1453789378dbddpafnxs" name="Linux">
     <recordtable>
      <record dir="1453789483qzcb4av15g" crypt="0" url="" tags="linux, команды" author="Рябинин А.К." id="1453789483rsua429j3g" ctime="20160126092443" name="Некоторые полезные команды" file="text.html"/>
@@ -18,6 +23,7 @@
     <node id="14537921193ftmdvwicl" name="Ubuntu">
      <recordtable>
       <record dir="14537923677npjoj7jvr" crypt="0" url="http://help.ubuntu.ru/wiki/%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_unity" tags="ubuntu, unity, ярлык, значек" author="ubuntu.ru" id="1453792367ytdkksfslk" ctime="20160126101247" name="Добавление собственного значка в Главное меню и на панель Unity" file="text.html"/>
+      <record dir="1453796565c3u9uiyex9" crypt="0" url="http://archive.canonical.com/ubuntu" tags="ubuntu, old, старая, старые версии" author="" id="145379656553234cq2ur" ctime="20160126112245" name="Где брать репозитарии для устаревших версий Ubuntu" file="text.html"/>
      </recordtable>
     </node>
    </node>
@@ -27,11 +33,6 @@
       <record dir="1453789843o9ibcwz5ru" crypt="0" url="http://www.wago.su/examples/primer2" tags="wago, взлом, faq" author="Maxim Ananskih" id="14537898436g0bnefyp0" ctime="20160126093043" name="Как обмануть WAGO-I/O-CHECK и настроить Modbus Master - WAGO FAQ" file="text.html"/>
      </recordtable>
     </node>
-   </node>
-   <node id="1453794713sfdxyhwlh8" name="VirtualBox">
-    <recordtable>
-     <record dir="1453794870tmruysj0ln" crypt="0" url="" tags="VB, Virtualbox" author=" Рябинин Алексей" id="1453794870usp6v9fmmk" ctime="20160126105430" name="Полезности при работе с VB" file="text.html"/>
-    </recordtable>
    </node>
   </node>
   <node id="14537947405yk1wl91to" name="Помойка"/>
