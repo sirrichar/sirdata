@@ -19,6 +19,7 @@
    <node id="1453789378dbddpafnxs" name="Linux">
     <recordtable>
      <record dir="1453789483qzcb4av15g" crypt="0" url="" tags="linux, команды" author="Рябинин А.К." id="1453789483rsua429j3g" ctime="20160126092443" name="Некоторые полезные команды" file="text.html"/>
+     <record dir="14540558231xzh97af9j" crypt="0" url="http://askubuntu.com/questions/246647/jpeg-files-to-pdf" tags="jpg2pdf, jpg, pdf" author="askubuntu" id="1454055823yvzv0k8tsr" ctime="20160129112343" name="Конвертирование нескольких jpg в pdf" file="text.html"/>
     </recordtable>
     <node id="14537921193ftmdvwicl" name="Ubuntu">
      <recordtable>
@@ -28,6 +29,9 @@
     </node>
    </node>
    <node id="14537893886ul4ykxv5a" name="Рабочие">
+    <recordtable>
+     <record dir="1455195234akpw2dve44" crypt="0" url="http://spb.beeline.ru/b2b/products/mobile/services/details/moya-strana/" tags="билайн, bee, beeline" author="Рябинин Алексей" id="1455195234bofnadcslf" ctime="20160211155354" name="Билайн в командировке &quot;Моя страна&quot;" file="text.html"/>
+    </recordtable>
     <node id="1453789502lb3dm7nyot" name="WAGO">
      <recordtable>
       <record dir="1453789843o9ibcwz5ru" crypt="0" url="http://www.wago.su/examples/primer2" tags="wago, взлом, faq" author="Maxim Ananskih" id="14537898436g0bnefyp0" ctime="20160126093043" name="Как обмануть WAGO-I/O-CHECK и настроить Modbus Master - WAGO FAQ" file="text.html"/>
