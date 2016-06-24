@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Courier New'; font-size:11pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:x-large; font-weight:600;">Структура WM-Bus</span></p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Аналогично проводной версии, основная топология сети для WM-Bus – «точка-точка» или «звезда». Типичным применением WM-Bus является организация сбора показаний счетчиков потребления ресурсов на стационарный или мобильный концентратор, который впоследствии передает их для последующей обработки.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Основным регламентирующим документом WMbus является стандарт EN13757-4, определяющий обмен данными в диапазоне SRD (868…870 МГц). Если это допустимо местными нормативными актами – может использоваться диапазон 433 МГц или 169 МГц. На текущий момент в стандарте EN13757-4 определены три рабочих режима: «S», «T» и «R» (таблица 1).</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Таблица 1. Режимы WMBus (из EN 13757-4:2005)</p>
+<table border="0" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;" cellspacing="2" cellpadding="0" bgcolor="#ffffff">
+<tr>
+<td bgcolor="#8b8e93">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#ffffff; background-color:#8b8e93;">Режим</span></p></td>
+<td bgcolor="#8b8e93">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#ffffff; background-color:#8b8e93;">Направление</span></p></td>
+<td bgcolor="#8b8e93">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#ffffff; background-color:#8b8e93;">Скорость передачи данных и используемый код</span></p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">«S» (стационарный): S1; S1-m; S2</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">«S1» — однонаправленный;<br />«S2» – двунаправленный</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Передача (TX): 32 кбод/с, манчестерский; прием (RX):<br />32 кбод/с, манчестерский</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">«T» (частая передача): «T1»; «T2»</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">«T1» — однонаправленный;<br />«T2» — двунаправленный</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Передача (TX): 100 кбод/с, «3 из 6»; прием (RX):<br />32 кбод/с, манчестерский</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">«R» (частый прием): «R2»</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">«R2» — двунаправленный</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Передача (TX): 4.8 кбод/с, манчестерский; прием (RX):<br />4.8 кбод/с, манчестерский</p></td></tr></table>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Для кодирования данных в WMBus применяется либо манчестерский код (1/2 скорости передачи данных при использовании радиоканала в режиме «S»), либо специальный код «3 из 6» (2/3 скорости передачи при использовании радиоканала в режиме «T»). В режиме «S» полезная скорость передачи данных равна 16384 бит/с, а в режиме «T» — 66667 бит/с.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Пакет физического уровня WM-Bus состоит из четырех частей – преамбулы, слова синхронизации, поля данных и поля окончания пакета.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">В рамках протокола WM-Bus возможны следующие режимы формирования и трансляции пакетов:</p>
+<ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"><li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">режим 0 – кодирование манчестерским кодом, длина преамбулы 279 бит, синхронизирующее поле – 18 бит (значение 0x7696) поддерживается режимами работы S1 и S2;</li>
+<li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">режим 1 – кодирование манчестерским кодом, длина преамбулы 15 бит, синхронизирующее поле – 18 бит (значение 0x7696) поддерживается режимами работы S1-m, S2, T2;</li>
+<li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">режим 3 – код 3 из 6, длина преамбулы 19 бит, синхронизирующее поле – 10 бит (значение 0x3D) поддерживается режимами работы T1, T2;</li>
+<li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">режим 5 – кодирование манчестерским кодом, длина преамбулы 39 бит, синхронизирующее поле – 18 бит (значение 0x7696) поддерживается режимом R2.</li></ul>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Размер поля данных пакета – 0…64 кбайт, в данном поле инкапсулируется пакет канального уровня WM-Bus (или просто пакет WM-Bus). В сети WM-Bus возможны пакеты двух типов – А и B. Каждый тип пакетов включает в себя три информационных блока – первый, второй и опциональный.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Первый блок содержит поля длины пакета, контрольную информацию и адрес отправителя. Он одинаков для пакетов обоих типов.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Второй блок пакета содержит информационные поля, характеризующие тип информации в пакете. В него входят заголовок блока, 15 (тип А) или 115 (тип B) байт описания информации пакета и двухбайтовое поле контрольной суммы. Поле данных второго блока пакета включает в себя данные прикладного уровня WM-Bus.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Опциональный блок содержит поле данных и двухбайтовое поле контрольной суммы.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Протокол WM-Bus является достаточно простым для реализации и не требует от реализующего его контроллера большого объема оперативной и постоянной памяти. Это позволяет применять для реализации WM-Bus беспроводные приемопередатчики в связке с небольшим малопотребляющим контроллером. Интенсивность обмена данными в системах АСКУЭ на данный момент относительно невелика. В связи с этим при выборе аппаратной платформы на первый план выходит энергопотребление приемопередатчика и микроконтроллера в режимах сна, ожидания или подобных им. Например, данные со счетчика воды могут быть востребованы всего лишь несколько раз в сутки, а в ряде случаев – только несколько раз в месяц. Следовательно, большую часть времени и управляющий микроконтроллер, и беспроводной приемопередатчик будут находиться в режиме ожидания.</p>
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Для обмена данными целесообразнее использовать диапазон 868.7…869.2 МГц, поскольку радиоволны данного диапазона слабее подвержены влиянию препятствий и затуханию при прохождении сквозь стены и перекрытия по сравнению с волнами диапазона 2.4 ГГц. Кроме этого, в данном диапазоне практически нет помех, связанных с работой пользовательской электроники – пультов управления, сигнализации, беспроводных сетей или интерфейсов. На данный момент такие устройства используют в основном диапазоны 433 МГц или 2.4 ГГц.</p>
+<p style="-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p></body></html>
