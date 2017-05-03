@@ -1,69 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mytetradoc>
 <root>
- <format version="1" subversion="1"/>
+ <format version="1" subversion="2"/>
  <content>
   <node crypt="1" id="1453752275gesta5u1nr" name="Z/hXLCbC4Fzmx8paxGe2L9CwxLArpCpmemDzj6h2qS4DyEQWxHOl/A==">
    <node crypt="1" id="1453752324qoq6vo37f6" name="m8Fsz2P9xeVfEie2mzMMUpfpCe4ViHxguTkNYq0G3ko=">
     <recordtable>
-     <record dir="1453752536heyyjxuwtk" crypt="1" url="" tags="kUmr10omOg4ze9zLBO9plWNRd4OXMgjPrp5RR8iv71/3PU2IjdMqDsiTd8B68BjPC4Xb5eGUp10=" author="vkY/Pbh6By3/EgK41pFLVizL62LeCgIS/WITO0kDXaRYuITUVSTpnw==" id="1453752536t6b86e0nn0" ctime="20160125230856" name="9YDsX1O25XPcMN6VSknOvyL0moLlXZMPjZgnSKU82lJ+PX37Y78nF5v9wa9gKI3L3ZzIHYsNhU880K7wY3oL6SEDBmF7QMPd" file="text.html"/>
-     <record dir="1481096066dj6htph6yb" crypt="1" url="" tags="9s8DyfCistdOU7xOPsIrjgJ58DdR1SZnHfCj+QGUy4+7vKSHz6cKvihoUqaDj9dHDk014WMJkDY=" author="ydWK/KI6+BKqjSP1Vw1viF+358VFSvoNrL5y+fQVW/MoiyDrCjSjtA==" id="14810960666zz1qjhit7" ctime="20161207103426" name="gd9a0vij21cTVNJ7roXE/puhgiJbRZBHGo+5hyLJU/Y=" file="text.html"/>
+     <record id="1453752536t6b86e0nn0" name="9YDsX1O25XPcMN6VSknOvyL0moLlXZMPjZgnSKU82lJ+PX37Y78nF5v9wa9gKI3L3ZzIHYsNhU880K7wY3oL6SEDBmF7QMPd" author="vkY/Pbh6By3/EgK41pFLVizL62LeCgIS/WITO0kDXaRYuITUVSTpnw==" url="" tags="kUmr10omOg4ze9zLBO9plWNRd4OXMgjPrp5RR8iv71/3PU2IjdMqDsiTd8B68BjPC4Xb5eGUp10=" ctime="20160125230856" dir="1453752536heyyjxuwtk" file="text.html" crypt="1"/>
+     <record id="14810960666zz1qjhit7" name="gd9a0vij21cTVNJ7roXE/puhgiJbRZBHGo+5hyLJU/Y=" author="ydWK/KI6+BKqjSP1Vw1viF+358VFSvoNrL5y+fQVW/MoiyDrCjSjtA==" url="" tags="9s8DyfCistdOU7xOPsIrjgJ58DdR1SZnHfCj+QGUy4+7vKSHz6cKvihoUqaDj9dHDk014WMJkDY=" ctime="20161207103426" dir="1481096066dj6htph6yb" file="text.html" crypt="1"/>
     </recordtable>
    </node>
   </node>
-  <node id="1453752296fraf7xhcb2" name="Обычные">
-   <node id="1453794713sfdxyhwlh8" name="VirtualBox">
+  <node crypt="" id="1453752296fraf7xhcb2" name="Обычные">
+   <node crypt="" id="1453794713sfdxyhwlh8" name="VirtualBox">
     <recordtable>
-     <record dir="1453794870tmruysj0ln" crypt="0" url="" tags="VB, Virtualbox" author=" Рябинин Алексей" id="1453794870usp6v9fmmk" ctime="20160126105430" name="Полезности при работе с VB" file="text.html"/>
+     <record id="1453794870usp6v9fmmk" name="Полезности при работе с VB" author=" Рябинин Алексей" url="" tags="VB, Virtualbox" ctime="20160126105430" dir="1453794870tmruysj0ln" file="text.html" crypt="0"/>
     </recordtable>
    </node>
-   <node id="1453789378dbddpafnxs" name="Linux">
+   <node crypt="" id="1453789378dbddpafnxs" name="Linux">
     <recordtable>
-     <record dir="1453789483qzcb4av15g" crypt="0" url="" tags="linux, команды" author="Рябинин А.К." id="1453789483rsua429j3g" ctime="20160126092443" name="Некоторые полезные команды" file="text.html"/>
-     <record dir="14540558231xzh97af9j" crypt="0" url="http://askubuntu.com/questions/246647/jpeg-files-to-pdf" tags="jpg2pdf, jpg, pdf" author="askubuntu" id="1454055823yvzv0k8tsr" ctime="20160129112343" name="Конвертирование нескольких jpg в pdf" file="text.html"/>
-     <record dir="1466584470ttkoasduie" crypt="0" url="https://geektimes.ru/post/277082/?utm_campaign=email_digest&amp;utm_source=email_geektimes&amp;utm_medium=email_week_20160622&amp;utm_content=link2post" tags="видео, ffmpeg" author="easy_john " id="1466584470ukweooouzo" ctime="20160622113430" name="Видео из командной строки" file="text.html"/>
+     <record id="1453789483rsua429j3g" name="Некоторые полезные команды" author="Рябинин А.К." url="" tags="linux, команды" ctime="20160126092443" dir="1453789483qzcb4av15g" file="text.html" crypt="0"/>
+     <record id="1454055823yvzv0k8tsr" name="Конвертирование нескольких jpg в pdf" author="askubuntu" url="http://askubuntu.com/questions/246647/jpeg-files-to-pdf" tags="jpg2pdf, jpg, pdf" ctime="20160129112343" dir="14540558231xzh97af9j" file="text.html" crypt="0"/>
+     <record id="1466584470ukweooouzo" name="Видео из командной строки" author="easy_john " url="https://geektimes.ru/post/277082/?utm_campaign=email_digest&amp;utm_source=email_geektimes&amp;utm_medium=email_week_20160622&amp;utm_content=link2post" tags="видео, ffmpeg" ctime="20160622113430" dir="1466584470ttkoasduie" file="text.html" crypt="0"/>
     </recordtable>
-    <node id="14537921193ftmdvwicl" name="Ubuntu">
+    <node crypt="" id="14537921193ftmdvwicl" name="Ubuntu">
      <recordtable>
-      <record dir="14537923677npjoj7jvr" crypt="0" url="http://help.ubuntu.ru/wiki/%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_unity" tags="ubuntu, unity, ярлык, значек" author="ubuntu.ru" id="1453792367ytdkksfslk" ctime="20160126101247" name="Добавление собственного значка в Главное меню и на панель Unity" file="text.html"/>
-      <record dir="1453796565c3u9uiyex9" crypt="0" url="http://archive.canonical.com/ubuntu" tags="ubuntu, old, старая, старые версии" author="" id="145379656553234cq2ur" ctime="20160126112245" name="Где брать репозитарии для устаревших версий Ubuntu" file="text.html"/>
+      <record id="1453792367ytdkksfslk" name="Добавление собственного значка в Главное меню и на панель Unity" author="ubuntu.ru" url="http://help.ubuntu.ru/wiki/%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C_unity" tags="ubuntu, unity, ярлык, значек" ctime="20160126101247" dir="14537923677npjoj7jvr" file="text.html" crypt="0"/>
+      <record id="145379656553234cq2ur" name="Где брать репозитарии для устаревших версий Ubuntu" author="" url="http://archive.canonical.com/ubuntu" tags="ubuntu, old, старая, старые версии" ctime="20160126112245" dir="1453796565c3u9uiyex9" file="text.html" crypt="0"/>
      </recordtable>
     </node>
    </node>
-   <node id="14537893886ul4ykxv5a" name="Рабочие">
+   <node crypt="" id="14537893886ul4ykxv5a" name="Рабочие">
     <recordtable>
-     <record dir="1455195234akpw2dve44" crypt="0" url="http://spb.beeline.ru/b2b/products/mobile/services/details/moya-strana/" tags="билайн, bee, beeline" author="Рябинин Алексей" id="1455195234bofnadcslf" ctime="20160211155354" name="Билайн в командировке &quot;Моя страна&quot;" file="text.html"/>
-     <record dir="1464354444uxpiypvygu" crypt="0" url="http://www.compel.ru/lib/ne/2014/6/4-wmbus-spirit1-idealnoe-reshenie-dlya-rashodomerov-askue/" tags="" author="" id="146435444447lbjze3k9" ctime="20160527160724" name="Wireless m-bus" file="text.html"/>
-     <record dir="146435478392b9s0j36e" crypt="0" url="http://www.avantazh.com/products/" tags="Барьер, искрозащита, авантаж" author="" id="14643547836gzdy8eunx" ctime="20160527161303" name="Барьеры искрозащиты Аватнаж" file="text.html"/>
-     <record dir="1466777694w7ixdf2i81" crypt="0" url="" tags="" author="Рябинин А.К." id="14667776942grqyn4bzy" ctime="20160624171454" name="MicroPC Настройки" file="text.html"/>
-     <record dir="1478943828nhrgs3ldbu" crypt="0" url="" tags="роутер, китайский, мини" author="Рябинин А.К." id="1478943828uhmev8v9ly" ctime="20161112124348" name="Мини роутер" file="text.html"/>
+     <record id="1455195234bofnadcslf" name="Билайн в командировке &quot;Моя страна&quot;" author="Рябинин Алексей" url="http://spb.beeline.ru/b2b/products/mobile/services/details/moya-strana/" tags="билайн, bee, beeline" ctime="20160211155354" dir="1455195234akpw2dve44" file="text.html" crypt="0"/>
+     <record id="146435444447lbjze3k9" name="Wireless m-bus" author="" url="http://www.compel.ru/lib/ne/2014/6/4-wmbus-spirit1-idealnoe-reshenie-dlya-rashodomerov-askue/" tags="" ctime="20160527160724" dir="1464354444uxpiypvygu" file="text.html" crypt="0"/>
+     <record id="14643547836gzdy8eunx" name="Барьеры искрозащиты Аватнаж" author="" url="http://www.avantazh.com/products/" tags="Барьер, искрозащита, авантаж" ctime="20160527161303" dir="146435478392b9s0j36e" file="text.html" crypt="0"/>
+     <record id="14667776942grqyn4bzy" name="MicroPC Настройки" author="Рябинин А.К." url="" tags="" ctime="20160624171454" dir="1466777694w7ixdf2i81" file="text.html" crypt="0"/>
+     <record id="1478943828uhmev8v9ly" name="Мини роутер" author="Рябинин А.К." url="" tags="роутер, китайский, мини" ctime="20161112124348" dir="1478943828nhrgs3ldbu" file="text.html" crypt="0"/>
+     <record id="1493806715igaxg2i3ps" name="Как переименовать виртуалку в Virtualbox" author="" url="https://rutracker.org/forum/viewtopic.php?t=5260144&amp;start=30" tags="virtualbox, solidworks" ctime="20170503131835" dir="14938067157ity859nus" file="text.html"/>
     </recordtable>
     <node crypt="1" id="1458588128l80yr1jjsr" name="XOUhMXFX9HVERU1i36fUHahZiZQjYoNWt9vGrQj1MhsWCJUkDM47rpN/Na3wcBzB08Kl3t9180E/0udJNHk2lg==">
      <recordtable>
-      <record dir="1458588698ef94tjv5hn" crypt="1" url="" tags="vva9kU7IEfjU2sPp7VpIjP4FnUSzh1942152sZOJ5WwN46scT5GNFRRAW4uBWKlKM3MzBaibe1dE+mcsQyadCOne3iAiT7Xjr/6+pbhdKvNRKMkyFsViYA==" author="qhDb5WoXZQlPFuLypQ0c4/WFB76QIgO8KngDQdOPCQCnD/Dg8UILTg==" id="14585886981x7khje2eq" ctime="20160321223138" name="8+pdGxu1/b/s+NJteaNwL6DYIUSGQiM+WJoexEsnzS0Cwo5fC/DWpia9BRjdXmwlIWNKqFyCnhVgFuSUiPfl+ZJtKgFYFQPqmE2wO+ZiizcN37nFYBVEZqyg8iEFAN6d" file="text.html"/>
-      <record dir="1458589285amuryvsg2w" crypt="1" url="" tags="HwN20byabqAxkCmbmbLuw5Fo1P5U0Y/d3rcH46tJzuptj0/l55rbuYZehiWmGsEie/uzfxh2RS3MKGzLGn9yivtE6ir6rIRoZR6R+GycUJ0s+omhOMvRAg==" author="tKMVy/hml4gk4cNeBI7FEfSZi9Ugd3BdNL8qmH/8etVVdx72IRfAHg==" id="1458589285tl5k10zsvb" ctime="20160321224125" name="9wGtEhjp/+S10oOALv46OlLNytgiLZn+ZMVXQglX6Ze3p2lRPbyUXpe4aN3sh9oU+hKixD5PITwTiDwbtCtK4p6+PL+FtWuF" file="text.html"/>
-      <record dir="1460032498zmeo04tm49" crypt="1" url="" tags="2JJ/LHM1w8KKsis7nxfWqAEzlRuG3BIppvmOEoaeZ4juXFqHAX5kVA==" author="tZdPXtG1gEs1Ld/KuMXM/H4RpgFjs2afz4EHj7TkZvO62QLiILqELg==" id="1460032498105ru1h2c5" ctime="20160407153458" name="y3eaQ2OaSB1XYvlsWfS/u600bF+UbfbL6hehALPLh4IzIoRqqQdes5dqRVCLTLf5KUbaERZSVxv7WP9wWfsfQwu+PpyWdmZn" file="text.html"/>
-      <record dir="1464869131g1achrjmqe" crypt="1" url="" tags="34L7PrBJNJfqyVOJBfCn8jg16hSypyGbf6TPMm6jrJs=" author="" id="14648691312oba1n4jmg" ctime="20160602150531" name="jr83eGc3YMpi0E4yo8p44t7fn8rWCCZWw2g+6+OK5ON1g0VhkGzZBcTwyfUm72q2" file="text.html"/>
+      <record id="14585886981x7khje2eq" name="8+pdGxu1/b/s+NJteaNwL6DYIUSGQiM+WJoexEsnzS0Cwo5fC/DWpia9BRjdXmwlIWNKqFyCnhVgFuSUiPfl+ZJtKgFYFQPqmE2wO+ZiizcN37nFYBVEZqyg8iEFAN6d" author="qhDb5WoXZQlPFuLypQ0c4/WFB76QIgO8KngDQdOPCQCnD/Dg8UILTg==" url="" tags="vva9kU7IEfjU2sPp7VpIjP4FnUSzh1942152sZOJ5WwN46scT5GNFRRAW4uBWKlKM3MzBaibe1dE+mcsQyadCOne3iAiT7Xjr/6+pbhdKvNRKMkyFsViYA==" ctime="20160321223138" dir="1458588698ef94tjv5hn" file="text.html" crypt="1"/>
+      <record id="1458589285tl5k10zsvb" name="9wGtEhjp/+S10oOALv46OlLNytgiLZn+ZMVXQglX6Ze3p2lRPbyUXpe4aN3sh9oU+hKixD5PITwTiDwbtCtK4p6+PL+FtWuF" author="tKMVy/hml4gk4cNeBI7FEfSZi9Ugd3BdNL8qmH/8etVVdx72IRfAHg==" url="" tags="HwN20byabqAxkCmbmbLuw5Fo1P5U0Y/d3rcH46tJzuptj0/l55rbuYZehiWmGsEie/uzfxh2RS3MKGzLGn9yivtE6ir6rIRoZR6R+GycUJ0s+omhOMvRAg==" ctime="20160321224125" dir="1458589285amuryvsg2w" file="text.html" crypt="1"/>
+      <record id="1460032498105ru1h2c5" name="y3eaQ2OaSB1XYvlsWfS/u600bF+UbfbL6hehALPLh4IzIoRqqQdes5dqRVCLTLf5KUbaERZSVxv7WP9wWfsfQwu+PpyWdmZn" author="tZdPXtG1gEs1Ld/KuMXM/H4RpgFjs2afz4EHj7TkZvO62QLiILqELg==" url="" tags="2JJ/LHM1w8KKsis7nxfWqAEzlRuG3BIppvmOEoaeZ4juXFqHAX5kVA==" ctime="20160407153458" dir="1460032498zmeo04tm49" file="text.html" crypt="1"/>
+      <record id="14648691312oba1n4jmg" name="jr83eGc3YMpi0E4yo8p44t7fn8rWCCZWw2g+6+OK5ON1g0VhkGzZBcTwyfUm72q2" author="" url="" tags="34L7PrBJNJfqyVOJBfCn8jg16hSypyGbf6TPMm6jrJs=" ctime="20160602150531" dir="1464869131g1achrjmqe" file="text.html" crypt="1"/>
      </recordtable>
     </node>
-    <node id="1453789502lb3dm7nyot" name="WAGO">
+    <node crypt="" id="1453789502lb3dm7nyot" name="WAGO">
      <recordtable>
-      <record dir="1453789843o9ibcwz5ru" crypt="0" url="http://www.wago.su/examples/primer2" tags="wago, взлом, faq" author="Maxim Ananskih" id="14537898436g0bnefyp0" ctime="20160126093043" name="Как обмануть WAGO-I/O-CHECK и настроить Modbus Master - WAGO FAQ" file="text.html"/>
-      <record dir="14641922385uc0eui0m1" crypt="0" url="" tags="wago, 750-881" author="" id="1464192238954e8rclsq" ctime="20160525190358" name="IP адрес" file="text.html"/>
+      <record id="14537898436g0bnefyp0" name="Как обмануть WAGO-I/O-CHECK и настроить Modbus Master - WAGO FAQ" author="Maxim Ananskih" url="http://www.wago.su/examples/primer2" tags="wago, взлом, faq" ctime="20160126093043" dir="1453789843o9ibcwz5ru" file="text.html" crypt="0"/>
+      <record id="1464192238954e8rclsq" name="IP адрес" author="" url="" tags="wago, 750-881" ctime="20160525190358" dir="14641922385uc0eui0m1" file="text.html" crypt="0"/>
      </recordtable>
     </node>
    </node>
-   <node id="1463404450572cg3ltzm" name="Личное">
-    <node id="1463404483vzc6jtx8il" name="Рецепты">
+   <node crypt="" id="1463404450572cg3ltzm" name="Личное">
+    <node crypt="" id="1463404483vzc6jtx8il" name="Рецепты">
      <recordtable>
-      <record dir="1463404569exmlwgy4ej" crypt="0" url="http://recepty-kulinarija.com/gyul-manty-0" tags="Манты" author="Н/А" id="1463404569dwxotlp1zy" ctime="20160516161609" name="Гюль Манты" file="text.html"/>
-      <record dir="1463552219cep475sf86" crypt="0" url="http://recepty-kulinarija.com/myaso-po-gruzinski-0" tags="Рецепт, мясо" author="Н/А" id="1463552219rqf8jrvz9d" ctime="20160518091659" name="Мясо по Грузински" file="text.html"/>
-      <record dir="14635557999m0hl7skg6" crypt="0" url="http://recepty-kulinarija.com/marinuem-myaso" tags="мясо, шашлык, мариновать" author="Н/А" id="1463555799l1zfrpc80e" ctime="20160518101639" name="Маринуем мясо" file="text.html"/>
-      <record dir="1464590364fppac3fjbc" crypt="0" url="http://pro-receptiki.ru/fantasticheski-myagkoe-myaso-na-shashlyki-za-polchasa-sohrani-sebe-na-stranicu-chtoby-ne-poteryat" tags="шашлык, мясо" author="" id="1464590364qpnqeld82b" ctime="20160530093924" name="Фантастически мягкое мясо на шашлыки" file="text.html"/>
+      <record id="1463404569dwxotlp1zy" name="Гюль Манты" author="Н/А" url="http://recepty-kulinarija.com/gyul-manty-0" tags="Манты" ctime="20160516161609" dir="1463404569exmlwgy4ej" file="text.html" crypt="0"/>
+      <record id="1463552219rqf8jrvz9d" name="Мясо по Грузински" author="Н/А" url="http://recepty-kulinarija.com/myaso-po-gruzinski-0" tags="Рецепт, мясо" ctime="20160518091659" dir="1463552219cep475sf86" file="text.html" crypt="0"/>
+      <record id="1463555799l1zfrpc80e" name="Маринуем мясо" author="Н/А" url="http://recepty-kulinarija.com/marinuem-myaso" tags="мясо, шашлык, мариновать" ctime="20160518101639" dir="14635557999m0hl7skg6" file="text.html" crypt="0"/>
+      <record id="1464590364qpnqeld82b" name="Фантастически мягкое мясо на шашлыки" author="" url="http://pro-receptiki.ru/fantasticheski-myagkoe-myaso-na-shashlyki-za-polchasa-sohrani-sebe-na-stranicu-chtoby-ne-poteryat" tags="шашлык, мясо" ctime="20160530093924" dir="1464590364fppac3fjbc" file="text.html" crypt="0"/>
      </recordtable>
     </node>
    </node>
   </node>
-  <node id="14537947405yk1wl91to" name="Помойка"/>
+  <node crypt="" id="14537947405yk1wl91to" name="Помойка"/>
  </content>
 </root>
