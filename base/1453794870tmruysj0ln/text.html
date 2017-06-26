@@ -6,22 +6,37 @@ p, li { white-space: pre-wrap; }
 <tr>
 <td>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Запуск виртуалки без интерфейса только с rdp</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Далее подключаемся через remmina (например)</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Или можно подключиться в отдельных иксах, например в Ctrl-Alt-F8</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Запускаем х-ы:</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Запускаем rdp в восьмом терминале:</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Теперь есть возможность быстро переключаться между виндовой и гномьей сессиями стандартными сочетаниями: Ctrl-Alt-F7 и Ctrl-Alt-F8</span></p></td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Далее подключаемся через remmina (например)</span></p></td>
 <td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">VBoxHeadless -e &quot;TCP/Address=127.0.0.1&quot; -s test &amp;</span></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'DejaVu Sans'; font-size:10pt;"></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'DejaVu Sans'; font-size:10pt;"></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">sudo X :1 vt08 &amp;</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">DISPLAY=&quot;:1&quot; rdesktop-vrdp -f localhost &amp;</span></p></td></tr>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">VBoxHeadless --startvm WinXPCodesys --vrde on</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'DejaVu Sans'; font-size:10pt;"><br /></p></td></tr>
 <tr>
 <td>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">Экспорт виртуалок в нужное место из коммандной строки (запускается из нужного места)</span></p></td>
 <td>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'DejaVu Sans'; font-size:10pt;">VBoxManage export WinXPCodesys test -o ./virtualki_20160601.ova </span></p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Смена интерфейса сетевой карты в режиме моста</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">VBoxManage modifyvm WinXPCodesys --bridgeadapter1 em1</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Удаление поддержки USB2.0</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">VBoxManage modifyvm WinXPCodesys --usbehci off</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Информация о машине</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">VBoxManage showvminfo WinXPCodesys</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Управление машиной (<span style=" font-family:'monospace';">pause, resume, poweroff,</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'monospace';">reset, savestate) </span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'monospace';">Подробнее </span><a href="https://www.virtualbox.org/manual/ch08.html#idm3528"><span style=" font-family:'monospace'; text-decoration: underline; color:#0000ff;">https://www.virtualbox.org/manual/ch08.html#idm3528</span></a></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">VBoxManage controlvm WinXPCodesys poweroff</p></td></tr>
 <tr>
 <td></td>
 <td></td></tr>
