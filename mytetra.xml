@@ -12,6 +12,9 @@
    </node>
   </node>
   <node crypt="" id="1453752296fraf7xhcb2" name="Обычные">
+   <recordtable>
+    <record id="1505636374vdauteuti7" name="MAG255 перепрошивка в AuraHD" author="mixeysan" url="http://4pda.ru/forum/index.php?showtopic=454327&amp;st=16980#entry64362713" tags="MAG255" ctime="20170917111934" dir="15056363747s9c8p4u4m" file="text.html"/>
+   </recordtable>
    <node crypt="" id="1453794713sfdxyhwlh8" name="VirtualBox">
     <recordtable>
      <record id="1453794870usp6v9fmmk" name="Полезности при работе с VB" author=" Рябинин Алексей" url="" tags="VB, Virtualbox" ctime="20160126105430" dir="1453794870tmruysj0ln" file="text.html" crypt="0"/>
