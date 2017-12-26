@@ -58,6 +58,9 @@
     </node>
    </node>
    <node crypt="" id="1463404450572cg3ltzm" name="Личное">
+    <recordtable>
+     <record id="1514292468npsvndrcgi" name="Принтер Canon Selphy CP1200 печать любых jpg" author="" url="" tags="Принтер CP1200" ctime="20171226154748" dir="151429246895pv7yx1oe" file="text.html"/>
+    </recordtable>
     <node crypt="" id="1463404483vzc6jtx8il" name="Рецепты">
      <recordtable>
       <record id="1463404569dwxotlp1zy" name="Гюль Манты" author="Н/А" url="http://recepty-kulinarija.com/gyul-manty-0" tags="Манты" ctime="20160516161609" dir="1463404569exmlwgy4ej" file="text.html" crypt="0"/>
